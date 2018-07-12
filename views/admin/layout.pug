@@ -1,0 +1,34 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title Administration
+    
+    link(rel='stylesheet', href='/css/admin/materialdesignicons.css')
+    link(rel='stylesheet', href='/css/admin/vendor.bundle.base.css')
+    link(rel='stylesheet', href='/css/admin/vendor.bundle.addons.css')
+    link(rel='stylesheet', href='/css/admin/style.css')    
+    link(rel='shortcut icon', href='/images/favicon.png')
+  body
+    .container-scroller
+      include partials/navbar
+      
+      .container-fluid.page-body-wrapper
+        
+        include partials/sidebar
+        
+        .main-panel
+          .content-wrapper
+            
+            block content
+          
+          include partials/footer
+          
+        
+    script(src='/js/admin/vendor.bundle.base.js')
+    script(src='/js/admin/vendor.bundle.addons.js')
+    script(src='/js/admin/off-canvas.js')
+    script(src='/js/admin/misc.js')
+    
+    script(src='/js/admin/dashboard.js')

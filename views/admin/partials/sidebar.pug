@@ -1,0 +1,63 @@
+nav#sidebar.sidebar.sidebar-offcanvas
+          ul.nav
+            li.nav-item.nav-profile
+              .nav-link
+                .user-wrapper
+                  .profile-image
+                    img(src='/images/faces/face1.jpg', alt='profile image')
+                  .text-wrapper
+                    p.profile-name Richard V.Welsh
+                    div
+                      small.designation.text-muted Manager
+                      span.status-indicator.online
+                button.btn.btn-success.btn-block
+                  | New Project
+                  i.mdi.mdi-plus
+            li.nav-item
+              a.nav-link(href='index.html')
+                i.menu-icon.mdi.mdi-television
+                span.menu-title Dashboard
+            li.nav-item
+              a.nav-link(data-toggle='collapse', href='#ui-basic', aria-expanded='false', aria-controls='ui-basic')
+                i.menu-icon.mdi.mdi-content-copy
+                span.menu-title Basic UI Elements
+                i.menu-arrow
+              #ui-basic.collapse
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='pages/ui-features/buttons.html') Buttons
+                  li.nav-item
+                    a.nav-link(href='pages/ui-features/typography.html') Typography
+            li.nav-item
+              a.nav-link(href='pages/forms/basic_elements.html')
+                i.menu-icon.mdi.mdi-backup-restore
+                span.menu-title Form elements
+            li.nav-item
+              a.nav-link(href='pages/charts/chartjs.html')
+                i.menu-icon.mdi.mdi-chart-line
+                span.menu-title Charts
+            li.nav-item
+              a.nav-link(href='pages/tables/basic-table.html')
+                i.menu-icon.mdi.mdi-table
+                span.menu-title Tables
+            li.nav-item
+              a.nav-link(href='pages/icons/font-awesome.html')
+                i.menu-icon.mdi.mdi-sticker
+                span.menu-title Icons
+            li.nav-item
+              a.nav-link(data-toggle='collapse', href='#auth', aria-expanded='false', aria-controls='auth')
+                i.menu-icon.mdi.mdi-restart
+                span.menu-title User Pages
+                i.menu-arrow
+              #auth.collapse
+                ul.nav.flex-column.sub-menu
+                  li.nav-item
+                    a.nav-link(href='pages/samples/blank-page.html')  Blank Page 
+                  li.nav-item
+                    a.nav-link(href='pages/samples/login.html')  Login 
+                  li.nav-item
+                    a.nav-link(href='pages/samples/register.html')  Register 
+                  li.nav-item
+                    a.nav-link(href='pages/samples/error-404.html')  404 
+                  li.nav-item
+                    a.nav-link(href='pages/samples/error-500.html')  500 
