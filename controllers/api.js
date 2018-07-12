@@ -637,8 +637,17 @@ exports.postPinterest = (req, res, next) => {
 };
 
 exports.getGoogleMaps = (req, res) => {
+
+  const trashes = [
+    {
+      location: 'SmarTrash 1',
+      latitude: -18.931129,
+      longitude: 47.527687
+    }
+  ];
   res.render('api/google-maps', {
     title: 'Google Maps API',
-    google_map_api_key: process.env.GOOGLE_MAP_API_KEY
+    google_map_api_key: 'AIzaSyAkMxCUzUY_hk6oKx8ETk93s5RxHPJNZ1s',
+    objects: JSON.stringify(trashes)
   });
 };
