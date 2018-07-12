@@ -1,3 +1,8 @@
+const TWILIO_SID = 'AC10363faedbdbe1b60428bdedbebca703'
+const TWILIO_TOKEN = '421d080c308f3c8b2a8f87897952acf1'
+const TWILIO_FROM = '+15005550006'
+
+
 const { promisify } = require('util');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -7,7 +12,7 @@ const tumblr = require('tumblr.js');
 const GitHub = require('@octokit/rest');
 const Twit = require('twit');
 const stripe = require('stripe')(process.env.STRIPE_SKEY);
-const twilio = require('twilio')(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
+const twilio = require('twilio')(TWILIO_SID, TWILIO_TOKEN);
 const Linkedin = require('node-linkedin')(process.env.LINKEDIN_ID, process.env.LINKEDIN_SECRET, process.env.LINKEDIN_CALLBACK_URL);
 const clockwork = require('clockwork')({ key: process.env.CLOCKWORK_KEY });
 const paypal = require('paypal-rest-sdk');
@@ -408,7 +413,7 @@ exports.postTwilio = (req, res, next) => {
 
   const message = {
     to: req.body.number,
-    from: '+13472235148',
+    from: TWILIO_FROM,
     body: req.body.message
   };
   twilio.messages.create(message).then((sentMessage) => {
