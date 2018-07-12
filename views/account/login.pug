@@ -1,44 +1,77 @@
-extends ../layout
+doctype html
+html(lang='en')
+  head
 
-block content
-  .pb-2.mt-2.mb-4.border-bottom
-    h3 Sign in
-  form(method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='email') Email
-      .col-md-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-    .form-group.row
-      label.col-md-3.col-form-label.font-weight-bold.text-right(for='password') Password
-      .col-md-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-    .form-group
-      .offset-sm-3.col-md-7.pl-2
-        button.col-md-3.btn.btn-primary(type='submit')
-          i.far.fa-user.fa-sm
-          | Login
-        a.btn.btn-link(href='/forgot') Forgot your password?
-    .form-group
-      .offset-sm-3.col-md-7.pl-2
-        hr
-    .form-group
-      .offset-sm-3.col-md-7.pl-2
-        a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-          i.fab.fa-facebook-f.fa-sm
-          | Sign in with Facebook
-        a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
-          i.fab.fa-twitter.fa-sm
-          | Sign in with Twitter
-        a.btn.btn-block.btn-google.btn-social(href='/auth/google')
-          i.fab.fa-google-plus-g.fa-xs
-          | Sign in with Google
-        a.btn.btn-block.btn-github.btn-social(href='/auth/github')
-          i.fab.fa-github.fa-sm
-          | Sign in with GitHub
-        a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-          i.fab.fa-linkedin-in.fa-sm
-          | Sign in with LinkedIn
-        a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
-          i.fab.fa-instagram.fa-sm
-          | Sign in with Instagram
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title Login
+
+    link(rel='stylesheet', href='/css/admin/materialdesignicons.css')
+    link(rel='stylesheet', href='/css/feather.css')
+    link(rel='stylesheet', href='/css/admin/vendor.bundle.base.css')
+    link(rel='stylesheet', href='/css/admin/vendor.bundle.addons.css')
+
+    link(rel='stylesheet', href='/css/admin/style.css')
+
+    link(rel='shortcut icon', href='/images/favicon.png')
+  body
+    .container-scroller
+      .container-fluid.page-body-wrapper.full-page-wrapper.auth-page
+        .content-wrapper.d-flex.align-items-center.auth.auth-bg-1.theme-one
+          .row.w-100
+            .col-lg-4.mx-auto
+              .auto-form-wrapper
+                include ../partials/flash
+
+                form(method='POST')
+                  input(type='hidden', name='_csrf', value=_csrf)
+                  .form-group
+                    label.label Email
+                    .input-group
+                      input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
+                      .input-group-append
+                        span.input-group-text
+                          i.mdi.mdi-check-circle-outline
+                  .form-group
+                    label.label Password
+                    .input-group
+                      input.form-control(type='password', name='password', id='password', placeholder='*********', required)
+                      .input-group-append
+                        span.input-group-text
+                          i.mdi.mdi-check-circle-outline
+                  .form-group
+                    button.btn.btn-primary.submit-btn.btn-block Login
+                  .form-group.d-flex.justify-content-between
+                    .form-check.form-check-flat.mt-0
+                      label.form-check-label
+                        input.form-check-input(type='checkbox', checked='')
+                        |  Keep me signed in
+                    a.text-small.forgot-password.text-black(href='/forgot') Forgot Password
+                    
+                  .form-group
+                    a.btn.btn-block.g-login(href='/auth/google')
+                      img.mr-3( src='/images/file-icons/icon-google.svg', alt='', height='15')
+                      | Log in with Google
+                  .text-block.text-center.my-3
+                    span.text-small.font-weight-semibold Not a member ?
+                    a.text-black.text-small(href='/signup')  Create new account
+              ul.auth-footer
+                li
+                  a(href='#') Conditions
+                li
+                  a(href='#') Help
+                li
+                  a(href='#') Terms
+              p.footer-text.text-center copyright © 2018 Bootstrapdash. All rights reserved.
+        // content-wrapper ends
+        // page-body-wrapper ends
+        // container-scroller
+        // plugins:js
+        script(src='/js/admin/vendor.bundle.base.js')
+        script(src='/js/admin/vendor.bundle.addons.js')
+        // endinject
+        // inject:js
+        script(src='/js/admin/off-canvas.js')
+        //script(src='/js/admin/hoverable-collapse.js')
+        script(src='/js/admin/misc.js')
+        // endinject

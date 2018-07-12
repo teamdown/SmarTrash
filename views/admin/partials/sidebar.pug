@@ -4,15 +4,10 @@ nav#sidebar.sidebar.sidebar-offcanvas
               .nav-link
                 .user-wrapper
                   .profile-image
-                    img(src='/images/faces/face1.jpg', alt='profile image')
+                    img(src=user.gravatar(), alt='profile image')
                   .text-wrapper
-                    p.profile-name Richard V.Welsh
-                    div
-                      small.designation.text-muted Manager
-                      span.status-indicator.online
-                button.btn.btn-success.btn-block
-                  | New Project
-                  i.mdi.mdi-plus
+                    p.profile-name= user.profile.name
+                    
             li.nav-item
               a.nav-link(href='index.html')
                 i.menu-icon.mdi.mdi-television
